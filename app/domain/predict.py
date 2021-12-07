@@ -1,5 +1,6 @@
 from fastapi.routing import APIRouter
 from pydantic import BaseModel
+from loterie import *
 
 TAG = "predict"
 router = APIRouter()
@@ -13,10 +14,16 @@ class Tirage(BaseModel):
     E1: int
     E2: int
 
+# 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
 
 @router.post("/api/predict", tags=[TAG])
 async def create_tirage(tirage: Tirage):
-    return {"tirage": tirage}
+
+    arrayTirageNumbers = [tirage.N1, tirage.N2, tirage.N3, tirage.N4, tirage.N4, tirage.N5, tirage.E1, tirage.E2]
+
+    result = makePrevision(arrayTirageNumbers)
+
+    return {"proba de gain": result[0], "proba de perte": result[1]}
 
 @router.get("/api/generate/predict", tags=[TAG])
 async def generate_combinations():
