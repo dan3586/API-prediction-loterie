@@ -2,7 +2,7 @@
 
 ![This is an image](https://lonalo-v.azureedge.net/-/media/domain/brands/eum_logo_dark_1line.png)
 
-> * Source : *https://www.loterie-nationale.be/*
+> * Source : *https://www.loterie-nationale.be/nos-jeux/euromillions/*
 
 ## Résumé
 
@@ -12,6 +12,14 @@ Ce projet consiste en la mise en place d'une API permettant de :
 >   * Enrichir la base de données et le modèle grâce à l'ajout de nouvelles combinaisons gagnantes
 
 Pour ce faire nous avons uilisé la librairie de Machine Learning __Sklearn__  et le framework __FastAPI__.
+
+## Jeu de données
+
+Les données utilisées pour produire ce travail sont extraites des précédents résultats de tirages et de gain. Il s'agit donc de combinaisons (uniquement gagnantes), de la date de tirage, du nombre de gagnants et de la somme mise en jeu. En sachant que le jeu respecte les règles suivantes :
+> * Chaque tirage est indépendant des autres
+> * Un tirage génère 5 numéros de 1 à 50 et deux numéros étoiles de 1 à 12
+> * Un gagnant est défini lorsqu’il obtient 5 bons numéros et 2 bons numéros étoiles
+
 
 ## Installation
 
