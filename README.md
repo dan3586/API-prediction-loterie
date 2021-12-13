@@ -1,16 +1,12 @@
-# Title / Repository Name
+# Euro million prediction
 
 ## About / Synopsis
 
-* What is it, what does it do / Abstract
-* Project status: working/prototype
-* Nuxeo Support
+* Ce projet consiste en la mise en place d'une API permettant de :
+>   * Prédire le pourcentage de gain au loto d'une combinaison de chiffres 
+>   * Générer des combinaisons ayant de fortes probabilités de gain
+>   * Enrichir la base de données et le modèle grâce à l'ajout de nouvelles combinaisons gagnantes
 
-See real examples:
-
-* <https://github.com/nuxeo/nuxeo/blob/master/README.md>
-* <https://github.com/nuxeo/nuxeo-drive/blob/master/README.md>
-* <https://github.com/nuxeo/nuxeo-sdk-ios/blob/master/README.md>
 
 ## Table of contents
 
