@@ -15,7 +15,10 @@ L'utilisation de cette API requiert l'installation de librairies spécifiques*, 
 
 > *(\*) Les librairies nécessaires sont regroupées dans le fichier requirements.txt, dont l'execution permet l'installation de l'ensemble des éléments.*
 
-### Composantes FastAPI
-### Composantes Machine Learning
+### Installer les librairies
 
-Le modèle de Machine Learning a été conçut  
+En vous connectant à votre Terminal, allez dans le dossier contenant le fichier *requirements.txt* et executez la ligne suivante :
+
+> pip3 install -r requirements.txt
+
+### Mettre en marche l'API
