@@ -1,8 +1,6 @@
 # Euro million prediction
 
-<p align="center">
-   ![This is an image](https://lonalo-v.azureedge.net/-/media/domain/brands/eum_logo_dark_1line.png)
-</p>
+![This is an image](https://lonalo-v.azureedge.net/-/media/domain/brands/eum_logo_dark_1line.png)
 
 
 ## Résumé
