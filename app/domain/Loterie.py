@@ -12,11 +12,24 @@ from sklearn.ensemble import RandomForestClassifier
 
 data_dir = "/home/eisti/Documents/ING3/DevOps/Projet/euro_data.csv"
 
-def lecture(data_dir):
-    data = pd.read_csv("euro_data.csv", sep=";")
-    data = data.drop(columns=["Date","Gain","Winner"],axis=1)
-    data['Result'] = 1
-    return data
+def ajoutLigne(data,ligne):
+    cles = ['Date','N1', 'N2', 'N3','N4', 'N5', 'E1', 'E2','Winner','Gain']
+    df = dict(zip(cles,ligne))
+    return data.append(df, ignore_index = True)
+
+def lecture(ligne=[], ajout = False):
+
+    if ajout == False:
+        data = pd.read_csv("euro_data.csv", sep=";")
+        data = data.drop(columns=["Date","Gain","Winner"],axis=1)
+        data['Result'] = 1
+        return data
+    else:
+        data = pd.read_csv("euro_data.csv", sep=";")
+        data = ajoutLigne(data,ligne)
+        data = data.drop(columns=["Date","Gain","Winner"],axis=1)
+        data['Result'] = 1
+        return data
 
 def generation(data):
     tab = []
@@ -34,8 +47,19 @@ def generation(data):
         data = data
     return data
 
-def modelePrevision(data):
+def modelePrevision(data:pd.DataFrame,sauv=False) -> (float,float):
+    """
+    Détermine la probabilité que la combinaison d'entrée soit gagnante et perdante.
 
+    Paramètres : 
+    
+    data (Pandas DataFrame) : Jeu de données d'entrée.
+    new_entries (tableau) : Tableau d'entiers correspondant à la combinaison à tester.
+
+    Return :
+
+    Retourne un tuple de réels dont la première valeur est la probabilité de gain et la seconde celle de perte.
+    """
 
     ##PARTIE 2
     data = generation(data)
@@ -55,25 +79,25 @@ def modelePrevision(data):
 
     ##PARTIE 4
 
-    modele_path = os.getcwd()+ "/lotterie_model.sav"
-    if os.path.isfile(modele_path):
-        modele = joblib.load(modele_path)
-    else:
-        model_saved = "lotterie_model.sav"
-        joblib.dump(RegLog, model_saved)
-        modele = joblib.load(modele_path)
+    if sauv==False:
+        modele_path = os.getcwd()+ "/lotterie_model.sav"
+        if os.path.isfile(modele_path):
+            modele = joblib.load(modele_path)
+        else:
+            model_saved = "lotterie_model.sav"
+            joblib.dump(RegLog, model_saved)
+            modele = joblib.load(modele_path)
 
-    return modele
+        return modele
+    else:
+       modele_path = os.getcwd()+ "/lotterie_model.sav"
+       model_saved = "lotterie_model.sav"
+       joblib.dump(RegLog, model_saved)
+       modele = joblib.load(modele_path)
+       return modele
 
 data = lecture(data_dir)
 modele = modelePrevision(data)
-
-def prevision(modele,new_entries):
-
-    new_entries = np.array(new_entries).reshape(1,-1)
-    proba_gain = modele.predict_proba(new_entries)
-
-    return round(proba_gain[0][0],2), round(proba_gain[0][1],2)
 
 def generationCombinaisons(data):
 
@@ -86,6 +110,13 @@ def generationCombinaisons(data):
             tab.append(randint(1,12))
     return tab
 
+def prevision(modele,new_entries:np.array):
+
+    new_entries = np.array(new_entries).reshape(1,-1)
+    proba_gain = modele.predict_proba(new_entries)
+
+    return round(proba_gain[0][0],2), round(proba_gain[0][1],2)
+
 def validationCombi(data):
 
     for _ in range(10):
@@ -94,5 +125,12 @@ def validationCombi(data):
             return entree
 
 print(validationCombi(data))
-entree = [45,8,15,33,29,12,12]
-print(prevision(modele,entree))
+tableau = [1,2,3,4,5,6,7]
+print(prevision(modele,tableau))
+
+indice = ['2021-12-13',1,2,3,4,5,6,7,1,256945961]
+data = lecture(ligne=indice,ajout = True)
+modele = modelePrevision(data,sauv=True)
+
+tableau = [1,2,3,4,5,6,7]
+print(prevision(modele,tableau))
