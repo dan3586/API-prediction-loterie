@@ -1,6 +1,6 @@
 # Euro million prediction
 
-![This is an image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.loterie-nationale.be%2Fnos-jeux%2Feuromillions%2Fresultats-tirage%2F26-11-2021&psig=AOvVaw2aOK68gnG8ev95A3afEANW&ust=1639490681823000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNilze_44PQCFQAAAAAdAAAAABAD)
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
 
 ## Résumé
 
