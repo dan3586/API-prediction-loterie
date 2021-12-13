@@ -1,6 +1,6 @@
 # Euro million prediction
 
-![This is an image](https://lonalo-v.azureedge.net/-/media/domain/brands/eum_logo_dark_1line.png)
+![This is an image](https://lonalo-v.azureedge.net/-/media/domain/brands/eum_logo_dark_1line.png=100x20)
 
 > * Source : *https://www.loterie-nationale.be/nos-jeux/euromillions/*
 
@@ -19,6 +19,16 @@ Les données utilisées pour produire ce travail sont extraites des précédents
 > * Chaque tirage est indépendant des autres
 > * Un tirage génère 5 numéros de 1 à 50 et deux numéros étoiles de 1 à 12
 > * Un gagnant est défini lorsqu’il obtient 5 bons numéros et 2 bons numéros étoiles
+
+## Choix techniques 
+
+Des choix d'implémentation ont été fait afin d'apporter de l'optimalité à cette API.
+
+### Machine Learning
+
+La conception du modèle de machine learning a d'abord commencé par une analyse exploratoire des données. Cette première partie nous a permis d'observer les ditributions de tirages, notamment la répartition générale des chiffres joués.
+
+### FastAPI
 
 
 ## Installation
