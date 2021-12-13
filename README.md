@@ -34,9 +34,15 @@ La conception du modèle de machine learning a d'abord commencé par une analyse
 
 Les observations faites précédemment et les stratégies établies nous ont conduis à faire une sélection de variables sur les données. Cela consistait ainsi à la suppression des variables Date, Winners (nombre de gagnants) et Gain (somme en jeu), considérés comme inutiles à la prévision. De plus, malgré le désir d'effectuer du __features engineering__, nous sommes rendu compte de la non viabilité de ces opérations sur les données. On arriverait à une situation où le modèle donnerait une probabilité de gain de 100 % à chaque combinaison saisie, quelle soit bonne ou mauvaise.
 
+##### Ajout de données
+
+La génération de fausse données nous a permis d'avoir un dataset pour servir à l'entrainement du modèle.
+
 #### Classifieur
 
 La classification d'un tirage et le calcul des probabilités de gain et de perte est la partie sensible du travail. Il s'agit en effet de trouver l'algorithme le mieux adapté en terme de complexité et dont les paramètres permettent d'échapper aux situations de sur/sous ajustements. Nous avons décidé de travailler avec une régression logistique et une forêt aléatoire. A la suite des obtenus résultats, nous avons décidé de travailler avec les forêts aléatoires. Puis pour donner plus de rigueur à notre modèle, nous avons effectué une recherche par quadrillage afin de déterminer les hyper-paramètres maximisant la précision.
+
+
 ### FastAPI
 
 
