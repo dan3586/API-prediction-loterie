@@ -12,7 +12,7 @@ Pour ce faire nous avons uilisé la librairie de Machine Learning __Sklearn__  e
 ## Installation
 
 L'utilisation de cette API requiert l'installation de librairies spécifiques*, puis le lancement même de l'application à partir de commandes adaptées. 
-*(*) Les librairies nécessaires sont regroupées dans le fichier requirements.txt, dont l'execution permet l'installation de l'ensemble des éléments.*
+*(\*) Les librairies nécessaires sont regroupées dans le fichier requirements.txt, dont l'execution permet l'installation de l'ensemble des éléments.*
 
 ### Composantes FastAPI
 ### Composantes Machine Learning
