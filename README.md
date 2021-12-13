@@ -1,6 +1,6 @@
 # Euro million prediction
 
-![This is an image](https://lonalo-v.azureedge.net/-/media/domain/brands/eum_logo_dark_1line.png=100x20)
+![This is an image](https://lonalo-v.azureedge.net/-/media/domain/brands/eum_logo_dark_1line.png=50x20)
 
 > * Source : *https://www.loterie-nationale.be/nos-jeux/euromillions/*
 
