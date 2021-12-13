@@ -1,6 +1,6 @@
 # Euro million prediction
 
-![This is an image](https://lonalo-v.azureedge.net/-/media/domain/brands/eum_logo_dark_1line.png=50x20)
+![This is an image](https://lonalo-v.azureedge.net/-/media/domain/brands/eum_logo_dark_1line.png)
 
 > * Source : *https://www.loterie-nationale.be/nos-jeux/euromillions/*
 
@@ -26,8 +26,17 @@ Des choix d'implémentation ont été fait afin d'apporter de l'optimalité à c
 
 ### Machine Learning
 
-La conception du modèle de machine learning a d'abord commencé par une analyse exploratoire des données. Cette première partie nous a permis d'observer les ditributions de tirages, notamment la répartition générale des chiffres joués.
+#### Exploratory Data Analysis (EDA)
 
+La conception du modèle de machine learning a d'abord commencé par une analyse exploratoire des données. Cette première partie nous a permis d'observer les ditributions de tirages, notamment la répartition générale des chiffres joués. Par la suite, nous avons observé la distribution des chiffres dans chaque numéros normal (N1 à N5) puis dans les numéros étoiles (E1,E2). A l'issue de cela, nous avions une idée des possibles stratégies d'implémention que nous pourrions prendre, selon ce qui est demandé. 
+
+#### Pre-processing
+
+Les observations faites précédemment et les stratégies établies nous ont conduis à faire une sélection de variables sur les données. Cela consistait ainsi à la suppression des variables Date, Winners (nombre de gagnants) et Gain (somme en jeu), considérés comme inutiles à la prévision. De plus, malgré le désir d'effectuer du __features engineering__, nous sommes rendu compte de la non viabilité de ces opérations sur les données. On arriverait à une situation où le modèle donnerait une probabilité de gain de 100 % à chaque combinaison saisie, quelle soit bonne ou mauvaise.
+
+#### Classifieur
+
+La classification d'un tirage et le calcul des probabilités de gain et de perte est la partie sensible du travail. Il s'agit en effet de trouver l'algorithme le mieux adapté en terme de complexité et dont les paramètres permettent d'échapper aux situations de sur/sous ajustements. Nous avons décidé de travailler avec une régression logistique et une forêt aléatoire. A la suite des obtenus résultats, nous avons décidé de travailler avec les forêts aléatoires. Puis pour donner plus de rigueur à notre modèle, nous avons effectué une recherche par quadrillage afin de déterminer les hyper-paramètres maximisant la précision.
 ### FastAPI
 
 
