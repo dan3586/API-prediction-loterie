@@ -134,3 +134,8 @@ modele = modelePrevision(data,sauv=True)
 
 tableau = [1,2,3,4,5,6,7]
 print(prevision(modele,tableau))
+
+def parametres(modele):
+    return modele.get_params()
+
+print(parametres(modele))
