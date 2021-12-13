@@ -2,10 +2,10 @@
 
 ## About / Synopsis
 
-* Ce projet consiste en la mise en place d'une API permettant de :
->   * Prédire le pourcentage de gain au loto d'une combinaison de chiffres 
->   * Générer des combinaisons ayant de fortes probabilités de gain
->   * Enrichir la base de données et le modèle grâce à l'ajout de nouvelles combinaisons gagnantes
+Ce projet consiste en la mise en place d'une API permettant de :
+>   Prédire le pourcentage de gain au loto d'une combinaison de chiffres 
+>   Générer des combinaisons ayant de fortes probabilités de gain
+>   Enrichir la base de données et le modèle grâce à l'ajout de nouvelles combinaisons gagnantes
 
 
 ## Table of contents
