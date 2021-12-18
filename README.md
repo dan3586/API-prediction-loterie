@@ -36,11 +36,15 @@ Les observations faites précédemment et les stratégies établies nous ont con
 
 ##### Ajout de données
 
-La génération de fausse données nous a permis d'avoir un dataset pour servir à l'entrainement du modèle.
+La génération de fausse données nous a permis d'avoir un dataset pour servir à l'entrainement du modèle. Nous avons fait le choix d'avoir un jeu de données final ayant un ratio de 20 % de tirages gagnants et 80 % de non gagnants. Après avoir testé différents scénarios, nous avons conclut que les résultats obtenus dans cette configuration étaient proches de la réalité. 
+
+##### Conception du modèle
+
+L'algorithme utilisé est un RandomForestClassifier, méthode privilégiée car permet de tester plusieurs issues possibles via l'entrainement de plusieurs arbres de décision, puis du choix de la classe par vote de la majorité des arbres. A la suite de ce choix, nous avons entrainé le classifieur avec les données, puis effectué une recherche par quadrillages afin d'optimiser les hyper-paramètres de la classification. Cette opération permet de trouver les valeurs des paramètres qui permettent de maximiser la précision de la classe prédite.  
 
 #### Classifieur
 
-La classification d'un tirage et le calcul des probabilités de gain et de perte est la partie sensible du travail. Il s'agit en effet de trouver l'algorithme le mieux adapté en terme de complexité et dont les paramètres permettent d'échapper aux situations de sur/sous ajustements. Nous avons décidé de travailler avec une régression logistique et une forêt aléatoire. A la suite des obtenus résultats, nous avons décidé de travailler avec les forêts aléatoires. Puis pour donner plus de rigueur à notre modèle, nous avons effectué une recherche par quadrillage afin de déterminer les hyper-paramètres maximisant la précision.
+La classification d'un tirage et le calcul des probabilités de gain et de perte est la partie sensible du travail. Il s'agit en effet de trouver l'algorithme le mieux adapté en terme de complexité et dont les paramètres permettent d'échapper aux situations de sur/sous ajustements. Nous avons décidé de travailler avec une régression logistique et une forêt aléatoire. A la suite des obtenus résultats, nous avons décidé de travailler avec les forêts aléatoires. Puis pour donner plus de rigueur à notre modèle, nous avons effectué une recherche par quadrillage avec __GridSearchCV__ afin de déterminer les hyper-paramètres maximisant la précision.
 
 
 ### FastAPI
