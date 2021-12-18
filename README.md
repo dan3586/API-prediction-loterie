@@ -45,6 +45,10 @@ La classification d'un tirage et le calcul des probabilités de gain et de perte
 
 ### FastAPI
 
+La mise en place de la partie serveur de l'API s'est effectué en requêtant les différentes fonctions de prédiction déjà implémentées, afin de retourner leurs résultat sur le serveur. Les étapes de traitement peuvent être résumé comme suit :
+> * Définition de la classe de tirage (N1,N2,N3,N4,N5,E1,E2) et de celle du format des données initiales (Date,N1,N2,N3,N4,N5,E1,E2,Winner,Gain).
+> * Conception des différentes méthodes d'interrogation des fonctions de prédiction.
+> * Mise en place des critères d'existence de chacune des variables saisies.
 
 ## Installation
 
@@ -59,3 +63,6 @@ En vous connectant à votre Terminal, allez dans le dossier contenant le fichier
 > pip3 install -r requirements.txt
 
 ### Mettre en marche l'API
+
+Une fois les librairies installées, déplacez-vous dans le dossier contenant le fichier __main.py__ et lancez la commande suivante :
+> *uvicorn main:app --reload*
