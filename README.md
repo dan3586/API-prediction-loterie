@@ -70,3 +70,6 @@ En vous connectant à votre Terminal, allez dans le dossier contenant le fichier
 
 Une fois les librairies installées, déplacez-vous dans le dossier contenant le fichier __main.py__ et lancez la commande suivante :
 > *uvicorn main:app --reload*
+
+Puis sur votre navigateur, allez sur le lien suivant :
+> *http://127.0.0.1:8000/docs#/*
