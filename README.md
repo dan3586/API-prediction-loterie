@@ -42,6 +42,9 @@ La génération de fausse données nous a permis d'avoir un dataset pour servir 
 
 L'algorithme utilisé est un RandomForestClassifier, méthode privilégiée car permet de tester plusieurs issues possibles via l'entrainement de plusieurs arbres de décision, puis du choix de la classe par vote de la majorité des arbres. A la suite de ce choix, nous avons entrainé le classifieur avec les données, puis effectué une recherche par quadrillages afin d'optimiser les hyper-paramètres de la classification. Cette opération permet de trouver les valeurs des paramètres qui permettent de maximiser la précision de la classe prédite.  
 
+##### Génération de tirages gagnants
+
+Pour qu'une combinaison soit générée comme ayant un fort taux de gain, nous nous sommes basé sur les résultats obtenus par le modèle. En effet, la précision maximale de notre modèle est de 58 %. Ce qui veut dire que le modèle arrive à prédire la classe d'un tirage un peu plus une fois sur deux. De ce fait, afin de générer des tirages proches de ce taux, nous avons fixé à 50 % le taux minimal pour être considéré comme fort. En notant que le tirage en sortie est obtenu dans un échantillon de 2000 combinaisons testées.
 
 ### FastAPI
 
