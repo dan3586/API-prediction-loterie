@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from Loterie import *
 
 TAG = "predict"
-data_dir = "/home/eisti/Documents/ING3/DevOps/Projet/euro_data.csv"
+data_dir = os.getcwd() + "/euro_data.csv"
 router = APIRouter()
 
 class Tirage(BaseModel):
