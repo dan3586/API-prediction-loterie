@@ -248,7 +248,7 @@ def validationCombi(data):
     Tirage ayant une forte probabilité de gain.
     """
 
-    for _ in range(10):
+    for _ in range(2000):
         entree = generationCombinaisons(data)
-        if prevision(modele,entree)[1] >= .1:
+        if prevision(modele,entree)[1] >= .5:
             return entree
